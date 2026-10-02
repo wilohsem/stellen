@@ -1,0 +1,6 @@
+SUBIDA FTP CYBENEWS
+
+Sube index.html a la carpeta publica del sitio (por ejemplo public_html).
+Puedes subir tambien la carpeta assets. El logo y favicon estan embebidos en index.html, por lo que el sitio seguira mostrando el logo aunque assets no sea accesible.
+
+IMPORTANTE: no cambies el nombre de index.html.
