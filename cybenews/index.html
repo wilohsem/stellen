@@ -1,1 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CYBENEWS - Desarrollo web, hosting, diseño gráfico y aplicaciones móviles.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<title>CYBENEWS | Soluciones digitales</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+:root{
+  --navy:#06245f;
+  --blue:#075dcc;
+  --bright:#08b9ef;
+  --ink:#112c55;
+  --muted:#607493;
+  --soft:#f4f8ff;
+  --line:#dce7f5;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}
+.container{width:min(1200px,calc(100% - 40px));margin:auto}
+
+/* Header */
+header{height:82px;background:#fff;border-bottom:1px solid #e3ebf6;position:sticky;top:0;z-index:100}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{width:158px;height:auto;display:block;max-height:68px;object-fit:contain}
+.menu{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:600;color:#14345f}
+.menu a{padding:29px 0;position:relative}
+.menu a:hover,.menu a.active{color:var(--blue)}
+.menu a.active:after{content:"";height:3px;width:100%;background:var(--blue);position:absolute;bottom:0;left:0}
+.quote{background:linear-gradient(135deg,var(--blue),var(--bright));color:white!important;padding:13px 21px!important;border-radius:10px;box-shadow:0 8px 20px rgba(7,93,204,.2)}
+.quote:after{display:none!important}
+
+/* Hero */
+.hero{height:510px;position:relative;overflow:hidden;background:#06245f;color:#fff}
+.slides{height:100%;position:relative}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .65s ease;display:flex;align-items:center}
+.slide.active{opacity:1;z-index:2}
+.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.9)}
+.slide-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,27,77,.97) 0%,rgba(3,50,112,.82) 40%,rgba(4,66,135,.40) 72%,rgba(3,31,83,.65) 100%)}
+.slide:nth-child(1) .slide-bg{background-image:url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85")}
+.slide:nth-child(2) .slide-bg{background-image:url("https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1800&q=85")}
+.slide:nth-child(3) .slide-bg{background-image:url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1800&q=85")}
+.slide:nth-child(4) .slide-bg{background-image:url("https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1800&q=85")}
+.hero-content{position:relative;z-index:4;width:min(1200px,calc(100% - 40px));margin:auto}
+.eyebrow{font-size:12px;letter-spacing:5px;font-weight:800;color:#5ddaff;margin-bottom:14px}
+.hero h1{font-size:clamp(40px,5vw,66px);line-height:.99;letter-spacing:-3px;max-width:680px;margin:0 0 22px;font-weight:700}
+.hero h1 span{color:#17c5f2}
+.hero p{font-size:17px;line-height:1.55;max-width:570px;color:#e5f1ff;margin:0 0 25px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 25px;border-radius:28px;font-weight:700;border:1px solid rgba(255,255,255,.25)}
+.btn-primary{background:linear-gradient(90deg,#08aef0,#0792e5);color:white;box-shadow:0 10px 30px rgba(0,165,240,.25)}
+.slider-arrow{position:absolute;z-index:10;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.55);background:rgba(3,32,83,.28);color:#fff;font-size:25px;cursor:pointer}
+.prev{left:28px}.next{right:28px}
+.dots{position:absolute;z-index:10;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.dot{width:9px;height:9px;border-radius:50%;border:0;background:#fff;opacity:.45;cursor:pointer}
+.dot.active{opacity:1;background:#19bff1}
+.service-strip{position:absolute;z-index:10;bottom:0;left:0;right:0;height:92px;background:linear-gradient(0deg,rgba(2,30,79,.92),rgba(2,30,79,.45));display:flex;align-items:center}
+.service-strip-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.strip-item{display:flex;align-items:center;gap:13px;color:#fff}
+.strip-icon{width:46px;height:46px;border:1px solid rgba(52,205,255,.75);border-radius:50%;display:grid;place-items:center;color:#fff;font-size:20px}
+.strip-item span{font-size:13px;line-height:1.25}
+
+/* Services */
+.services{padding:65px 0 85px;background:#fff}
+.section-title{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:end;margin-bottom:34px}
+.kicker{font-size:11px;letter-spacing:4px;color:var(--blue);font-weight:800}
+h2{font-size:42px;line-height:1.08;letter-spacing:-2px;color:var(--navy);margin:8px 0 0}
+h2 span{color:var(--blue)}
+.section-intro{color:var(--muted);line-height:1.65;font-size:15px}
+.more{display:inline-flex;border:1px solid #0b8ce5;border-radius:24px;color:var(--blue);padding:11px 20px;font-weight:700;margin-top:18px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 8px 30px rgba(8,47,100,.06);transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(8,47,100,.12)}
+.card-image{height:140px;background-size:cover;background-position:center}
+.web{background-image:url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80")}
+.host{background-image:url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80")}
+.design{background-image:url("https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80")}
+.mobile{background-image:url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80")}
+.card-body{padding:18px 20px 22px}
+.card-icon{width:40px;height:40px;background:#fff;border:1px solid #dcecff;border-radius:50%;display:grid;place-items:center;color:var(--blue);font-size:18px;margin-top:-38px;position:relative;margin-bottom:10px;box-shadow:0 5px 15px rgba(0,50,120,.1)}
+.card h3{color:var(--navy);font-size:17px;margin:0 0 6px}
+.card p{color:#71829c;font-size:13px;line-height:1.5;margin:0 0 10px}
+.card a{font-size:12px;color:var(--blue);font-weight:800}
+
+/* About/hosting */
+.blue-section{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:70px 0}
+.blue-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.blue-section h2{color:#fff}
+.blue-section p{color:#dceaff;line-height:1.7}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.feature{padding:18px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);border-radius:12px}
+.feature strong{display:block;color:#6fe1ff;margin-bottom:4px}
+.feature span{font-size:13px;color:#dceaff}
+
+/* Contact */
+.contact{padding:75px 0;background:#f4f8ff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px}
+.contact h2{margin-bottom:15px}
+.contact p{color:var(--muted)}
+.address{margin-top:25px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:12px;color:#24466f}
+.form{background:#fff;padding:25px;border-radius:15px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(8,47,100,.06)}
+input,textarea{width:100%;font:inherit;border:1px solid #d8e4f1;border-radius:9px;padding:13px;margin-bottom:12px;color:var(--ink)}
+textarea{height:125px;resize:vertical}.form .btn{border:0;cursor:pointer}
+
+/* Footer */
+footer{background:#041a45;color:#c5d7ef;padding:35px 0}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer-logo{width:170px}.footer small{font-size:12px}
+
+/* Responsive */
+@media(max-width:900px){
+  .menu{gap:12px}.menu a:not(.quote){display:none}
+  .hero{height:550px}.service-strip{height:105px}
+  .cards{grid-template-columns:1fr 1fr}.section-title,.blue-grid,.contact-grid{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:600px){
+  .container,.hero-content{width:calc(100% - 28px)}
+  header{height:70px}.logo{width:155px}
+  .hero{height:590px}.hero h1{font-size:39px;letter-spacing:-2px}
+  .hero p{font-size:15px}.slider-arrow{width:38px;height:38px}.prev{left:10px}.next{right:10px}
+  .service-strip{height:112px}.service-strip-inner{grid-template-columns:1fr 1fr;gap:10px 16px}.strip-item{gap:8px}.strip-icon{width:35px;height:35px;font-size:15px}.strip-item span{font-size:10px}
+  .services{padding:50px 0}.section-title h2,h2{font-size:33px}.cards{grid-template-columns:1fr}
+  .card-image{height:160px}.features{grid-template-columns:1fr}
+  .footer{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#inicio"><img src="assets/cybenews-logo.png" class="logo" alt="CYBENEWS"></a>
+    <nav class="menu">
+      <a class="active" href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#hosting">Hosting</a>
+      <a href="#servicios">Portafolio</a>
+      <a href="#contacto">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a class="quote" href="#contacto">💬 &nbsp; Solicita una cotización</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="slides">
+    <article class="slide active">
+      <div class="slide-bg"></div>
+      <div class="hero-content">
+        <div class="eyebrow">IDEAS QUE IMPULSAN TU NEGOCIO</div>
+        <h1>Diseño y tecnología<br>para un <span>mundo digital</span></h1>
+        <p>Desarrollamos sitios web, aplicaciones móviles, branding y soluciones digitales que potencian tu marca.</p>
+        <a class="btn btn-primary" href="#servicios">Conoce nuestros servicios&nbsp; →</a>
+      </div>
+    </article>
+    <article class="slide">
+      <div class="slide-bg"></div>
+      <div class="hero-content">
+        <div class="eyebrow">DESARROLLO WEB</div>
+        <h1>Tu negocio merece<br>una <span>gran experiencia online</span></h1>
+        <p>Diseñamos sitios modernos, rápidos, responsivos y preparados para convertir visitas en oportunidades.</p>
+        <a class="btn btn-primary" href="#servicios">Ver desarrollo web&nbsp; →</a>
+      </div>
+    </article>
+    <article class="slide">
+      <div class="slide-bg"></div>
+      <div class="hero-content">
+        <div class="eyebrow">DISEÑO & BRANDING</div>
+        <h1>Una identidad que<br>haga <span>visible tu marca</span></h1>
+        <p>Construimos sistemas visuales coherentes para que tu empresa se vea profesional en cada punto de contacto.</p>
+        <a class="btn btn-primary" href="#servicios">Ver diseño gráfico&nbsp; →</a>
+      </div>
+    </article>
+    <article class="slide">
+      <div class="slide-bg"></div>
+      <div class="hero-content">
+        <div class="eyebrow">APLICACIONES MÓVILES</div>
+        <h1>Tu idea también<br>puede estar en <span>el móvil</span></h1>
+        <p>Diseñamos y desarrollamos aplicaciones para iOS y Android adaptadas a las necesidades de tu negocio.</p>
+        <a class="btn btn-primary" href="#contacto">Cuéntanos tu idea&nbsp; →</a>
+      </div>
+    </article>
+  </div>
+
+  <button class="slider-arrow prev" aria-label="Anterior">‹</button>
+  <button class="slider-arrow next" aria-label="Siguiente">›</button>
+
+  <div class="dots">
+    <button class="dot active" aria-label="Slide 1"></button>
+    <button class="dot" aria-label="Slide 2"></button>
+    <button class="dot" aria-label="Slide 3"></button>
+    <button class="dot" aria-label="Slide 4"></button>
+  </div>
+
+  <div class="service-strip">
+    <div class="container service-strip-inner">
+      <div class="strip-item"><div class="strip-icon">⌘</div><span>Sitios web<br>profesionales</span></div>
+      <div class="strip-item"><div class="strip-icon">▤</div><span>Hosting confiable<br>y dominios</span></div>
+      <div class="strip-item"><div class="strip-icon">✦</div><span>Diseño gráfico<br>y branding</span></div>
+      <div class="strip-item"><div class="strip-icon">▯</div><span>Aplicaciones<br>móviles</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <div class="kicker">NUESTROS SERVICIOS</div>
+        <h2>Soluciones digitales para<br>hacer crecer <span>tu negocio</span></h2>
+      </div>
+      <div class="section-intro">
+        En CYBENEWS combinamos diseño, tecnología y estrategia para entregar soluciones digitales integrales, adaptadas a las necesidades de cada cliente.
+        <br><a class="more" href="#contacto">Ver todos los servicios&nbsp; →</a>
+      </div>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-image web"></div>
+        <div class="card-body"><div class="card-icon">⌘</div><h3>Desarrollo de Sitios Web</h3><p>Sitios web modernos, rápidos y optimizados para SEO.</p><a href="#contacto">Más información&nbsp; →</a></div>
+      </article>
+      <article class="card">
+        <div class="card-image host"></div>
+        <div class="card-body"><div class="card-icon">▤</div><h3>Hosting y Dominios</h3><p>Hosting seguro, estable y de alto rendimiento para tus proyectos.</p><a href="#hosting">Más información&nbsp; →</a></div>
+      </article>
+      <article class="card">
+        <div class="card-image design"></div>
+        <div class="card-body"><div class="card-icon">✦</div><h3>Diseño Gráfico y Branding</h3><p>Creamos identidades visuales que conectan con tu audiencia.</p><a href="#contacto">Más información&nbsp; →</a></div>
+      </article>
+      <article class="card">
+        <div class="card-image mobile"></div>
+        <div class="card-body"><div class="card-icon">▯</div><h3>Aplicaciones Móviles</h3><p>Desarrollo de apps iOS y Android a la medida de tu negocio.</p><a href="#contacto">Más información&nbsp; →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="blue-section" id="hosting">
+  <div class="container blue-grid">
+    <div>
+      <div class="kicker" style="color:#67dcff">HOSTING CYBENEWS</div>
+      <h2>Tu sitio disponible cuando tus clientes lo necesiten.</h2>
+      <p>Nos encargamos del alojamiento, dominios, seguridad y soporte para que tu presencia digital funcione de forma estable.</p>
+      <a class="btn btn-primary" href="#contacto">Cotizar Hosting&nbsp; →</a>
+    </div>
+    <div class="features">
+      <div class="feature"><strong>✓ Seguridad</strong><span>SSL y buenas prácticas para proteger tu sitio.</span></div>
+      <div class="feature"><strong>✓ Respaldos</strong><span>Copias y recuperación para mayor tranquilidad.</span></div>
+      <div class="feature"><strong>✓ Correo corporativo</strong><span>Comunicación profesional con tu dominio.</span></div>
+      <div class="feature"><strong>✓ Soporte</strong><span>Acompañamiento técnico cuando lo necesites.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container contact-grid">
+    <div>
+      <div class="kicker">CONTACTO</div>
+      <h2>Hablemos de tu próximo proyecto.</h2>
+      <p>Cuéntanos qué necesitas y preparemos una solución digital a la medida de tu negocio.</p>
+      <div class="address"><strong>CYBENEWS</strong><br>General Del Canto 112<br>Providencia, Santiago<br><strong>ventas@cybenews.cl</strong></div>
+    </div>
+    <form class="form" onsubmit="event.preventDefault();alert('Formulario de demostración. Conecta este formulario a tu correo o CRM para producción.');">
+      <input required type="text" placeholder="Nombre / Empresa">
+      <input required type="email" placeholder="Correo electrónico">
+      <input type="tel" placeholder="Teléfono">
+      <textarea required placeholder="Cuéntanos brevemente sobre tu proyecto"></textarea>
+      <button class="btn btn-primary" type="submit">Solicitar una cotización&nbsp; →</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <img src="assets/cybenews-logo.png" class="footer-logo" alt="CYBENEWS">
+    <small>© 2026 CYBENEWS · Desarrollo web · Hosting · Diseño gráfico · Aplicaciones móviles · Empresa del Grupo Stellen</small>
+    <small>General Del Canto 112 · Providencia · Santiago</small>
+  </div>
+</footer>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const dots=[...document.querySelectorAll('.dot')];
+let current=0;
+let timer;
+
+function showSlide(index){
+  current=(index+slides.length)%slides.length;
+  slides.forEach((s,i)=>s.classList.toggle('active',i===current));
+  dots.forEach((d,i)=>d.classList.toggle('active',i===current));
+}
+function resetTimer(){
+  clearInterval(timer);
+  timer=setInterval(()=>showSlide(current+1),5500);
+}
+document.querySelector('.next').addEventListener('click',()=>{showSlide(current+1);resetTimer();});
+document.querySelector('.prev').addEventListener('click',()=>{showSlide(current-1);resetTimer();});
+dots.forEach((d,i)=>d.addEventListener('click',()=>{showSlide(i);resetTimer();}));
+resetTimer();
+</script>
+</body>
+</html>
