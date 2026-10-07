@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>WhatsApp ROTWIL</title>
+  <desc>Icono verde de WhatsApp con teléfono blanco y fondo transparente.</desc>
+
+  <!-- Green WhatsApp bubble with tail -->
+  <path fill="#00C853" d="
+    M512 110
+    C286 110 103 293 103 519
+    C103 593 123 662 158 722
+    L118 908
+    L305 858
+    C365 892 435 910 512 910
+    C738 910 921 727 921 501
+    C921 275 738 110 512 110 Z"/>
+
+  <!-- White telephone handset only -->
+  <path fill="#FFFFFF" d="
+    M382 292
+    C361 278 338 284 324 306
+    L285 366
+    C271 387 270 414 282 437
+    C339 548 425 638 533 698
+    C557 711 584 710 605 695
+    L664 653
+    C684 639 690 615 676 595
+    L641 544
+    C627 524 601 518 580 529
+    L531 555
+    C487 531 450 495 426 451
+    L452 402
+    C463 381 457 355 437 341
+    Z"/>
+</svg>

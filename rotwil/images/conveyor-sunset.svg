@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#24384b"/><stop offset=".52" stop-color="#d2764c"/><stop offset="1" stop-color="#f1ad62"/></linearGradient>
+ <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a4436"/><stop offset="1" stop-color="#211d1c"/></linearGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="1210" cy="350" r="125" fill="#ffd37d" opacity=".9"/>
+<path d="M0 590 Q230 470 440 560 T850 540 T1250 565 T1600 510 V900 H0Z" fill="#5a4638"/>
+<path d="M0 670 L1600 610 V900 H0Z" fill="url(#ground)"/>
+<!-- main conveyor -->
+<g stroke="#182328" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M100 735 L1370 450"/>
+ <path d="M125 770 L1395 485"/>
+ <path d="M115 753 L1380 468" stroke="#2d3538" stroke-width="54"/>
+ <path d="M115 753 L1380 468" stroke="#777d7e" stroke-width="8"/>
+</g>
+<g stroke="#1b2326" stroke-width="10">
+ <path d="M250 720 L280 820"/><path d="M490 665 L520 765"/><path d="M730 610 L760 710"/><path d="M970 555 L1000 655"/><path d="M1210 500 L1240 600"/>
+</g>
+<g fill="#252d30">
+ <ellipse cx="245" cy="724" rx="28" ry="11"/><ellipse cx="485" cy="669" rx="28" ry="11"/><ellipse cx="725" cy="614" rx="28" ry="11"/><ellipse cx="965" cy="559" rx="28" ry="11"/><ellipse cx="1205" cy="504" rx="28" ry="11"/>
+</g>
+<!-- second conveyor -->
+<path d="M720 900 L1510 565" stroke="#121a1d" stroke-width="65"/>
+<path d="M720 900 L1510 565" stroke="#8a8f8f" stroke-width="7"/>
+<g stroke="#171f22" stroke-width="9"><path d="M850 845 L875 900"/><path d="M1080 748 L1105 805"/><path d="M1310 650 L1335 705"/><path d="M1490 575 L1510 625"/></g>
+<!-- plant silhouette -->
+<g fill="#20282a"><rect x="1360" y="365" width="35" height="225"/><rect x="1410" y="300" width="45" height="290"/><rect x="1480" y="400" width="50" height="190"/><rect x="1540" y="335" width="35" height="255"/><path d="M1340 420h235v25h-235z"/></g>
+<text x="70" y="110" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="4" opacity=".92">CORREAS TRANSPORTADORAS</text>
+</svg>
