@@ -1,0 +1,6 @@
+const slides=[...document.querySelectorAll('.slide')];const dots=[...document.querySelectorAll('.dot')];let current=0;let timer;
+function showSlide(i){current=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===current));dots.forEach((d,n)=>d.classList.toggle('active',n===current))}
+function next(){showSlide(current+1)}function prev(){showSlide(current-1)}
+document.querySelector('.next').addEventListener('click',()=>{next();restart()});document.querySelector('.prev').addEventListener('click',()=>{prev();restart()});dots.forEach((d,i)=>d.addEventListener('click',()=>{showSlide(i);restart()}));
+function restart(){clearInterval(timer);timer=setInterval(next,5500)}restart();
+function sendWhatsApp(e){e.preventDefault();const fields=['nombre','empresa','telefono','correo','mensaje'].map(id=>document.getElementById(id)?.value||'');const text=`Hola Rotwil, quisiera solicitar contacto.%0A%0ANombre: ${encodeURIComponent(fields[0])}%0AEmpresa: ${encodeURIComponent(fields[1])}%0ATeléfono: ${encodeURIComponent(fields[2])}%0ACorreo: ${encodeURIComponent(fields[3])}%0A%0ANecesidad: ${encodeURIComponent(fields[4])}`;window.open(`https://wa.me/56982787110?text=${text}`,'_blank')}
