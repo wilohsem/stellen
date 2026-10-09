@@ -1,30 +1,25 @@
-Verti by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+STELLEN — SOLUCIONES QUÍMICAS Y DE PROCESOS
+
+Esta versión mantiene el logotipo Stellen del sitio y agrega fotografía industrial en el hero y las categorías.
+
+CONTACTO WHATSAPP
++56 9 6673 4080
+https://wa.me/56966734080
+
+ESTRUCTURA
+index.html
+assets/css/stellen.css
+assets/js/stellen.js
+assets/images/stellen-logo.png
+assets/images/kinova-logo.svg
+assets/images/*.svg
+
+Las fotografías de las tarjetas y del hero se cargan desde Unsplash mediante URLs externas para mantener el paquete liviano. Si se desea un sitio 100% autónomo, pueden descargarse y guardarse localmente en assets/images.
 
 
-A super simple + modern responsive website template. Took a slightly different direction
-on the mobile version's slide out nav (floating button versus a full on titlebar).
+LOGOTIPO
+Se utiliza exactamente el archivo stellen-logo.png entregado por el cliente, sin rediseñarlo.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+Actualización octubre 2026: logos oficiales de Stellen y Kinova, foto panorámica local de proceso minero/espesadores, correo melissa.pimentel@stellen.cl y categoría Suministros en general.
 
-(* = Not included)
-
-Feedback, bug reports, and comments are not only welcome, but strongly encouraged :)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Actualización final: la sección de soluciones queda con seis tarjetas. La última reúne “Soluciones especiales y suministro en general”.
