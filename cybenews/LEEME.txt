@@ -1,6 +1,14 @@
-SUBIDA FTP CYBENEWS
+CYBENEWS — SITIO COMPLETO ACTUALIZADO
 
-Sube index.html a la carpeta publica del sitio (por ejemplo public_html).
-Puedes subir tambien la carpeta assets. El logo y favicon estan embebidos en index.html, por lo que el sitio seguira mostrando el logo aunque assets no sea accesible.
+Contenido del paquete:
+- index.html: página principal con los cambios solicitados.
+- assets/cybenews-logo.png: logotipo.
+- assets/favicon.png: icono de pestaña del navegador.
 
-IMPORTANTE: no cambies el nombre de index.html.
+INSTALACIÓN EN GITHUB PAGES / FTP
+1. Descomprime este ZIP.
+2. Sube el archivo index.html a la raíz de la carpeta /cybenews/ y reemplaza el anterior.
+3. Sube la carpeta assets completa, conservando los nombres y las rutas.
+4. Confirma los cambios y recarga el sitio con Ctrl+Shift+R (Windows) o Cmd+Shift+R (Mac).
+
+Incluye: servicio Software, ERP y App; etiqueta Hosting; acceso a WhatsApp +56 9 6673 4080; dirección General Del Canto 112, oficina 301; mapa de Google Maps; título «Encuéntranos» en azul; logotipo del pie de página en blanco.
